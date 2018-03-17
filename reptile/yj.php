@@ -33,36 +33,43 @@
 		    preg_match_all($ch,$time,$time);
 		    $time = $time[0][0];
 		    $content = $doc->find("div.left650 > div > div#newscont p:eq(1)")->text();
-		    preg_match_all("/色(\S*)预警/",$title,$type);
-		    preg_match_all("/(\S{3})色/",$title,$level);
-		    $type = $type[1][0];
+
+			if(strpos($title,"发布")){
+				preg_match_all("/(\S*)发布/",$title,$area);
+				$zhuantai = "发布";
+			}else if(strpos($title,"解除")){
+				preg_match_all("/(\S*)解除/",$title,$area);
+				$zhuantai = "解除";
+			}
+			$area = $area[1][0];
+			preg_match_all("/{$zhuantai}(\S*)色/",$title,$level);
+			$level = $level[1][0];
+			preg_match_all("/{$level}色(\S*)预警/",$title,$type);
+			$type = $type[1][0];
 		    $py = $this->pinyin($type);
-		    $num = $this->color_level($level[1][0]);
-		    $area = $this->city($title);
-		    $level = $level[0][0];
-		    preg_match_all("/(\S{6}){$level}/",$title,$zhuantai);
-		    $zhuantai =  $zhuantai[1][0];
+		    $num = $this->color_level($level);
+		    $level = $level."色";
 		    $image = "http://www.tianqi.com/static/img/yujing_img/big".$py."_ico".$num.".jpg";
 
-		 //    $result = mysqli_query($this->db,"SELECT * FROM yj WHERE title='{$title}' and level='{$level}' and area='{$area}' and type='{$type}' and data_time='{$time}' and zhuantai='{$zhuantai}' ORDER BY id DESC");
-			// $row=mysqli_fetch_assoc($result);
-			// if(isset($row)){
-			// 	echo "已有数据   ".$title."\n\n";
-			// 	return;
-			// }
+		    $result = mysqli_query($this->db,"SELECT * FROM yj WHERE title='{$title}' and level='{$level}' and area='{$area}' and type='{$type}' and data_time='{$time}' and zhuantai='{$zhuantai}' ORDER BY id DESC");
+			$row=mysqli_fetch_assoc($result);
+			if(isset($row)){
+				echo "已有数据   ".$title."\n\n";
+				return;
+			}
 		    $sql = "INSERT INTO `yj`(`url`,`title`,`area`,`type`,`level`,`zhuantai`,`content`,`data_time`,`image`)values('{$url}','{$title}','{$area}','{$type}','{$level}','{$zhuantai}','{$content}','{$time}','{$image}')";
 		    // echo $url."\n";
 		    echo $title."\n";
-		    echo $area."\n";
-		    echo $time."\n";
-		    echo $type."\n";
-		    echo $level."\n";
-		    echo $zhuantai."\n";
-		    echo $image."\n";
-		    echo $content."\n";
+		    // echo $area."\n";
+		    // echo $time."\n";
+		    // echo $type."\n";
+		    // echo $level."\n";
+		    // echo $zhuantai."\n";
+		    // echo $image."\n";
+		    // echo $content."\n";
 		    // echo $sql;
-		    // mysqli_query($this->db,$sql);
-		    die;
+		    mysqli_query($this->db,$sql);
+		    // die;
 		}
 		public function color_level($ch){
 			if($ch == "蓝")return 1;
@@ -99,6 +106,6 @@
 		}
 	}
 	$html = new GetHTML("https://www.tianqi.com/alarmnews/%d");
-	// $html->islink();
-	$html->get_info("http://www.tianqi.com/alarmnews/1803152045102741.html");
+	$html->islink();
+	// $html->get_info("http://www.tianqi.com/alarmnews/1803152145102641.html");
 ?>

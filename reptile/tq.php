@@ -42,6 +42,10 @@
 			        $content=str_replace('","',"",$content);
 			        preg_match_all("/(\S{6}){$type[0][0]}/",$title[0][0],$zhuantai);
 			        $zhuantai = $zhuantai[1][0];
+			        if($zhuantai != "发布" && $zhuantai != "解除"){
+			        	echo "数据异常\n";
+			        	die;
+			        }
 			        preg_match_all("/(\S*){$zhuantai}/",$title[0][0],$area);
 			        $area = $area[1][0];
 			        $image="http://www.weather.com.cn/m2/i/about/alarmpic/".$type_level[0][0].$type_level[0][1].".gif";
