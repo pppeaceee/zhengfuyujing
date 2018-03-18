@@ -11,6 +11,7 @@
 				$url = sprintf($this->url,$i);
 				$this->get_link($url);
 			}
+			echo "爬取完毕";
 		}
 		public function get_link($url){
 			$page = file_get_contents($url);
@@ -20,7 +21,7 @@
 			foreach($text_box as $value){
 				$link = pq($value)->find("p > a")->attr("href");
 				$this->get_info($link);
-				sleep(1);
+				sleep(2);
 			}
 		}
 		public function get_info($url){

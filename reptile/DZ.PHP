@@ -7,13 +7,32 @@
 			connect_db($this->db);
 		}
 		public function islink(){
-			foreach(range(1,10) as $page){
+			foreach(range(1,200) as $page){
 				$url = sprintf($this->url,$page);
 				$this->get_info($url);
-				sleep(5);
+				sleep(8);
 			}
+			echo "爬取完毕";
 		}
 		public function get_info($url){
+			// $ch = curl_init();
+			// curl_setopt($ch, CURLOPT_FAILONERROR, false);
+			// curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			// if(strlen($url) > 5 && strtolower(substr($url,0,5)) == "https" ) {
+			// 	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+			// 	curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+			// }
+			// curl_setopt($ch, CURLOPT_HTTPHEADER, array('X-FORWARDED-FOR:106.18.238.143', 'CLIENT-IP:106.18.238.143'));  
+			// curl_setopt($ch, CURLOPT_REFERER, $url);
+			// curl_setopt($ch, CURLOPT_PROXY, "http://106.18.238.143");
+			// curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11");
+			// curl_setopt($ch, CURLOPT_URL, $url);
+			// curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+			// curl_setopt($ch, CURLOPT_HEADER, 0);
+			// $context = curl_exec($ch);
+			// curl_close($ch);
+			// print_r($context);
+			// die;
 			$context = file_get_contents($url);
 		    $ch='^CD[0-9]{14}"^';
 		    preg_match_all($ch,$context,$array2); 
@@ -47,13 +66,13 @@
 					$row=mysqli_fetch_assoc($result);
 					if(isset($row)){
 						echo "已有数据   ".$title."\n\n";
-						sleep(1);
+						sleep(2);
 						continue;
 					}
 					$sql = "INSERT INTO `dz` (`url`, `title`, `level`, `data_time`, `longitude`, `latitude`, `deep`, `area`) VALUES ('{$url_new}','{$title}','{$level}','{$time}','{$jingdu}','{$weidu}','{$deep}','{$area}')";
 			        echo $title."\n";
 			        mysqli_query($this->db,$sql);
-			        sleep(1);
+			        sleep(2);
 			    }
 			}
 		}

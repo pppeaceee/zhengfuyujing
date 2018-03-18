@@ -53,6 +53,7 @@
 					$row=mysqli_fetch_assoc($result);
 					if(isset($row)){
 						echo "已有数据   ".$title[0][0]."\n\n";
+						sleep(1);
 						continue;
 					}
 			        $sql = "INSERT INTO `yj`(`url`,`title`,`area`,`type`,`level`,`zhuantai`,`content`,`data_time`,`image`)values('{$url_new}','{$title[0][0]}','{$area}','{$type[0][0]}','{$level[0][0]}','{$zhuantai}','{$content}','{$time}','{$image}')";
@@ -60,9 +61,10 @@
 			        echo $title[0][0]."\n";
 			        mysqli_query($this->db,$sql);
 			        // die;
-			        sleep(1);
+			        sleep(2);
 		        }
 		    }
+		    echo "爬取完毕";
 		}
 		public function getMillisecond() {
 		    list($t1, $t2) = explode(' ', microtime());
