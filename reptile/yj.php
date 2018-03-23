@@ -96,7 +96,7 @@
 				case "大风":return "dafeng";
 				case "高温":return "gaowen";
 				case "雷电":return "leidian";
-				case "霜冻":return "bingshuang";
+				case "霜冻":return "shuangdong";
 				case "大雾":return "dawu";
 				case "冰雹":return "bingbao";
 				case "干旱":return "ganhan";
