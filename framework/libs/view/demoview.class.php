@@ -11,9 +11,11 @@
 		}
 		public function display_var($url,$data){
 			$page = file_get_contents($url);
-			foreach($data as $key => $value){
-				// echo $key . "=>" .$value."<br>";
-				$page = str_replace("{".$key."}",$value,$page);
+			for($i = 0;$i < count($data);$i++) {
+				foreach($data[$i] as $key => $value){
+					// echo $key . "[{$i}]=>" .$value."<br>";
+					$page = str_replace("{".$key."[".$i."]"."}",$value,$page);
+				}
 			}
 			echo $page;
 		}
