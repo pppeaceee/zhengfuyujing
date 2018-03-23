@@ -1,0 +1,183 @@
+/* 全局样式开始 */
+html,body{
+    height: 100%;
+}
+
+body{
+    font-size: 15px;
+    line-height: 1.5;
+    color: #333;
+    background-color: #fff;
+    position: relative;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+section{
+    background-color: #fff;
+    padding-top: 80px;
+}
+
+img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+} 
+/* 全局样式结束 */
+
+/* 头部样式开始 */
+header{
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 0;
+    transition: all 1s ease-in-out;
+}
+.logo{
+    float: left;
+    margin: 10px 10px 10px 0;
+}
+.site-name{
+   font-size: 36px;
+   transition: all 1s ease-in-out;
+}
+.site-name a{
+    color: white;
+}
+.site-slogan{
+   font-size: 14px;
+}
+header .col-md-8{
+    margin-top: 19px;
+}
+.navbar-default{
+    background-color: transparent;
+    border: none;
+}
+.navbar-default .navbar-nav>li>a{
+    color: #fff;
+    font-size: 22px;
+    transition: all 1s ease-in-out;
+}
+.navbar-default .navbar-nav>li>a:hover{
+    color: white;
+}
+.navbar-default .navbar-nav>li.active>a{
+    background-color: transparent;
+    color: white;
+}
+.navbar-default .navbar-nav>li.active>a:hover{
+    background-color: transparent;
+}
+
+.fixed-header-on header{
+    height: 70px;
+    background-color: rgba(0, 0, 0, 0.9)
+}
+
+.fixed-header-on .navbar-default .navbar-nav>li>a{
+    font-size: 20px;
+}
+
+.fixed-header-on .col-md-8{
+    margin-top: 4px;
+}
+
+.fixed-header-on .logo{
+    transform: scale(0.8);
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.fixed-header-on .site-name{
+    font-size: 24px;
+}
+/* 头部样式结束 */
+/* 首页样式开始 */
+.index{
+    height: 100%;
+}
+.index h3,.index p{
+    color: #fff;
+    font-size: 34px;
+}
+.index h1{
+    color: white;
+    font-size: 50px;
+    font-weight: 700;
+}
+.index::after{
+    position: absolute;
+    left: 0;
+    top:0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    content: '';
+}
+.index .caption{
+    z-index: 1;
+    position: absolute;
+    top: 35%;
+    width: 100%;
+}
+
+/* 首页样式结束 */
+
+
+.news a:focus, a:hover{
+    text-decoration: none;
+}
+
+.news img{
+    float: left;
+}
+
+.news span{
+    float: right;
+}
+
+
+/* 认识预警部分样式开始 */
+.filter li{
+    float: none;
+    display: inline-block;
+}
+.overlay-container{
+    position: relative;
+}
+.overlay{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transform: scale(0.5);
+    opacity: 0;
+    transition: all 0.5s;
+}
+.overlay i{
+    position: absolute;
+    left: 45%;
+    top: 45%;
+    font-size: 18px;
+    color: white;
+}
+.overlay span{
+    position: absolute;
+    bottom: 10px;
+    font-size: 13px;
+    color: white;
+    text-align: center;
+    width: 100%;
+}
+.overlay-container:hover .overlay{
+    transform: scale(1);
+    opacity: 1;
+}
+.btn{
+    margin-bottom: 20px;
+}
+/* 认识预警部分样式结束 */
