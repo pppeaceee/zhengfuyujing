@@ -49,6 +49,7 @@
 			        preg_match_all("/(\S*){$zhuantai}/",$title[0][0],$area);
 			        $area = $area[1][0];
 			        $image="http://www.weather.com.cn/m2/i/about/alarmpic/".$type_level[0][0].$type_level[0][1].".gif";
+			        if($type_level[0][0] == "94")$image = "http://www.weather.com.cn/m2/i/about/alarmpic/1201.gif";
 			        $result = mysqli_query($this->db,"SELECT * FROM yj WHERE title='{$title[0][0]}' and level='{$level[0][0]}' and area='{$area}' and type='{$type[0][0]}' and data_time='{$time}' and zhuantai='{$zhuantai}' ORDER BY id DESC");
 					$row=mysqli_fetch_assoc($result);
 					if(isset($row)){
