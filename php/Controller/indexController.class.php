@@ -4,8 +4,9 @@
 			$indexModel = M("index");
 			$yj_data = $indexModel->yujing();
 			$dz_data = $indexModel->dizheng();
+			$data = $indexModel->merge($yj_data,$dz_data);
 			$indexView = V("index");
-			$indexView->index($yj_data);
+			$indexView->index($data);
 		}
 	}
 ?>
