@@ -1,7 +1,7 @@
 <?php
-	require "phpQuery/phpQuery.php";
-	require "db_fns.php";
-	class GetHTML{
+	// require "phpQuery/phpQuery.php";
+	// require "db_fns.php";
+	class GetHTML_tq{
 		function  __construct($url){
 			$this->url = $url;
 			connect_db($this->db);
@@ -11,11 +11,14 @@
 		    $ch="^[0-9]{9}-[0-9]{14}-[0-9]{4}.html^";
 		    preg_match_all($ch,$context,$array2); 
 		    $array3=array_unique($array2);
+		    $i = 0;
 		    foreach($array3 as $values){
 		        foreach($values as $value){
         			$time_now=$this->getMillisecond();
-        			$url_new="http://product.weather.com.cn/alarm/webdata/".$value."?_="."$time_now";
+        			$url_new="http://product.weather.com.cn/alarm/webdata/".$value."?_="."{$time_now}";
         			$context1=file_get_contents($url_new);
+        			if($i < 5 && strpos($context1,"ALERTID") == false){echo "错误".$i++;continue;}
+
         			$h=explode("ALERTID",$context1);
 			        preg_match_all("/[\x80-\xff]+/", $h[0],$title);
 			        $h=explode("PROVINCE",$h[1]);
@@ -54,7 +57,7 @@
 					$row=mysqli_fetch_assoc($result);
 					if(isset($row)){
 						echo "已有数据   ".$title[0][0]."\n\n";
-						sleep(1);
+						sleep(2);
 						continue;
 					}
 			        $sql = "INSERT INTO `yj`(`url`,`title`,`area`,`type`,`level`,`zhuantai`,`content`,`data_time`,`image`)values('{$url_new}','{$title[0][0]}','{$area}','{$type[0][0]}','{$level[0][0]}','{$zhuantai}','{$content}','{$time}','{$image}')";
@@ -65,13 +68,13 @@
 			        sleep(2);
 		        }
 		    }
-		    echo "爬取完毕";
+		    echo "天气预警,爬取完毕";
 		}
 		public function getMillisecond() {
 		    list($t1, $t2) = explode(' ', microtime());
 		    return $t2 .  ceil( ($t1 * 1000) );
 		}
 	}
-	$html = new GetHTML("http://product.weather.com.cn/alarm/grepalarm_cn.php?_=1517191777205");
-	$html->islink();
+	// $tq = new GetHTML_tq("http://product.weather.com.cn/alarm/grepalarm_cn.php?_=1517191777205");
+	// $tq->islink();
 ?>

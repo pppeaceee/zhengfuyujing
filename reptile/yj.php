@@ -1,7 +1,5 @@
 <?php
-	include_once "phpQuery/phpQuery.php";
-	include_once "db_fns.php";
-	class GetHTML{
+	class GetHTML_yj{
 		function __construct($url){
 			$this->url = $url;
 			connect_db($this->db);
@@ -11,7 +9,7 @@
 				$url = sprintf($this->url,$i);
 				$this->get_link($url);
 			}
-			echo "爬取完毕";
+			echo "预警数据,爬取完毕";
 		}
 		public function get_link($url){
 			$page = file_get_contents($url);
@@ -106,7 +104,5 @@
 			}
 		}
 	}
-	$html = new GetHTML("https://www.tianqi.com/alarmnews/%d");
-	$html->islink();
 	// $html->get_info("http://www.tianqi.com/alarmnews/1803152145102641.html");
 ?>
