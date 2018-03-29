@@ -58,4 +58,19 @@ $('.filter li a').click(function(){
 
 // 认识预警结束
 
+//下拉效果插件开始
 new WOW().init();
+//下拉效果插件结束
+
+//轮播效果开始
+$('.carousel-control').css('line-height', $('.carousel-inner img').height() + 'px');
+$('#myCarousel').carousel({
+    interval: 3000,
+})
+$(window).resize(function () {
+    var $height = $('.carousel-inner img').eq(0).height() ||
+        $('.carousel-inner img').eq(1).height() ||
+        $('.carousel-inner img').eq(2).height();
+    $('.carousel-control').css('line-height', $height + 'px');
+})
+//轮播效果结束
