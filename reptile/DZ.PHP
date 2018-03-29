@@ -1,7 +1,5 @@
 <?php
-	require "phpQuery/phpQuery.php";
-	require "db_fns.php";
-	class GetHTML{
+	class GetHTML_dz{
 		function __construct($url){
 			$this->url = $url;
 			connect_db($this->db);
@@ -12,7 +10,7 @@
 				$this->get_info($url);
 				sleep(8);
 			}
-			echo "爬取完毕";
+			echo "地震数据,爬取完毕";
 		}
 		public function get_info($url){
 			// $ch = curl_init();
@@ -77,6 +75,4 @@
 			}
 		}
 	}
-	$html = new GetHTML("http://www.ceic.ac.cn/ajax/search?page=%d&&start=&&end=&&jingdu1=73&&jingdu2=136&&weidu1=3&&weidu2=54&&height1=&&height2=&&zhenji1=&&zhenji2=&&callback=jQuery18006096551879017713_1517193281934&_=1517193679279");
-	$html->islink();
 ?>
