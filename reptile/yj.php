@@ -9,7 +9,7 @@
 				$url = sprintf($this->url,$i);
 				$this->get_link($url);
 			}
-			echo "预警数据,爬取完毕";
+			echo "预警数据,爬取完毕\n";
 		}
 		public function get_link($url){
 			$page = file_get_contents($url);

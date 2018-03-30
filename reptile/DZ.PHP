@@ -5,12 +5,12 @@
 			connect_db($this->db);
 		}
 		public function islink(){
-			foreach(range(1,200) as $page){
+			foreach(range(1,20) as $page){
 				$url = sprintf($this->url,$page);
 				$this->get_info($url);
 				sleep(8);
 			}
-			echo "地震数据,爬取完毕";
+			echo "地震数据,爬取完毕\n";
 		}
 		public function get_info($url){
 			// $ch = curl_init();
