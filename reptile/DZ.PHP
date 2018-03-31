@@ -5,7 +5,7 @@
 			connect_db($this->db);
 		}
 		public function islink(){
-			foreach(range(1,20) as $page){
+			foreach(range(1,244) as $page){
 				$url = sprintf($this->url,$page);
 				$this->get_info($url);
 				sleep(8);

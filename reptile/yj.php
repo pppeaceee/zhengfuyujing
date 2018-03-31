@@ -5,7 +5,7 @@
 			connect_db($this->db);
 		}
 		public function islink(){
-			for($i=1;$i<=40;$i++){
+			for($i=1;$i<=23819;$i++){
 				$url = sprintf($this->url,$i);
 				$this->get_link($url);
 			}
