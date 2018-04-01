@@ -8,5 +8,21 @@
 			$indexView = V("index");
 			$indexView->index($data);
 		}
+		public function login(){
+			if($_POST){
+				$loginModel = M("login");
+				$loginModel->login();
+			}else{
+
+			}
+		}
+		public function register(){
+			if(isset($_POST)){
+				$registerModel = M("register");
+				$registerModel->register();
+			}else{
+
+			}
+		}
 	}
 ?>

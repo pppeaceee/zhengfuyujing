@@ -11,6 +11,6 @@
 		$tq->islink();
 		$yj->islink();
 		$dz->islink();
-		sleeo(1000);
+		sleep(1000);
 	}
 ?>

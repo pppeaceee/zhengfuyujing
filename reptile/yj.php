@@ -5,11 +5,11 @@
 			connect_db($this->db);
 		}
 		public function islink(){
-			for($i=1;$i<=40;$i++){
+			for($i=1;$i<=23819;$i++){
 				$url = sprintf($this->url,$i);
 				$this->get_link($url);
 			}
-			echo "预警数据,爬取完毕";
+			echo "预警数据,爬取完毕\n";
 		}
 		public function get_link($url){
 			$page = file_get_contents($url);

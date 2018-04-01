@@ -37,13 +37,13 @@
 			foreach($arr as $key => $value){
 				$value = mysqli_real_escape_string($this->con,$value);
 				$keyArr[] = '`'.$key.'`';
-				$valueArr[] = '`'.$value.'`';
+				$valueArr[] = '\''.$value.'\'';
 			}
 			$keys = implode(",",$keyArr);
 			$values = implode(",",$valueArr);
 			$sql = "insert into ".$table."(".$keys.")values(".$values.")";
 			$this->query($sql);
-			return mysqli_insert_id();
+			return mysqli_insert_id($this->con);
 		}
 		function update($table,$arr,$where){
 			foreach($arr as $key => $value){

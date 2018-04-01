@@ -68,7 +68,7 @@
 			        sleep(2);
 		        }
 		    }
-		    echo "天气预警,爬取完毕";
+		    echo "天气预警,爬取完毕\n";
 		}
 		public function getMillisecond() {
 		    list($t1, $t2) = explode(' ', microtime());

@@ -63,6 +63,7 @@ new WOW().init();
 //下拉效果插件结束
 
 //轮播效果开始
+<<<<<<< HEAD
 $('.carousel-control').css('line-height', $('.carousel-inner img').height() + 'px');
 $('#myCarousel').carousel({
     interval: 3000,
@@ -79,6 +80,60 @@ $(window).resize(function () {
 window.onload=function(){
     var oUserName=document.getElementById('username');
 
+=======
+
+//轮播效果结束
+
+//登录注册、选择地址开始   
+window.onload=function(){
+    var oUserName=document.getElementById('username');
+    var oSearch=document.getElementById("search");
+    var oAddress1=document.getElementById("address1");
+    var oMyselect1=document.getElementById("province"); 
+    var oMyselect2=document.getElementById("city"); 
+    var oMyselect3=document.getElementById("district"); 
+    
+  //   var index = oMyselect1.selectedIndex; // selectedIndex代表的是你所选中项的index 
+  //   oMyselect1.options[index].value;
+  //   oMyselect1.options[index].text; 
+    oMyselect1.onclick=function()
+    {
+        if(oMyselect1.options[oMyselect1.selectedIndex].text=="—— 省 ——"){
+            oAddress1.value="";
+        }
+        else{
+            oAddress1.value=oMyselect1.options[oMyselect1.selectedIndex].text+oMyselect2.options[oMyselect2.selectedIndex].text+oMyselect3.options[oMyselect3.selectedIndex].text;
+        }
+    }
+    oMyselect2.onclick=function()
+    {
+        if(oMyselect2.options[oMyselect2.selectedIndex].text=="—— 市 ——"||oMyselect3.options[oMyselect3.selectedIndex].text=="—— 区 ——")
+        {
+            oAddress1.value=oMyselect1.options[oMyselect1.selectedIndex].text;
+        }
+        else{
+            oAddress1.value=oMyselect1.options[oMyselect1.selectedIndex].text+oMyselect2.options[oMyselect2.selectedIndex].text+oMyselect3.options[oMyselect3.selectedIndex].text;
+        }
+    }
+    oMyselect3.onclick=function()
+    {
+      if(oMyselect3.options[oMyselect3.selectedIndex].text=="—— 区 ——"&&oMyselect2.options[oMyselect2.selectedIndex].text=="—— 市 ——")
+      {
+        oAddress1.value=oMyselect1.options[oMyselect1.selectedIndex].text;
+      }
+      if(oMyselect2.options[oMyselect2.selectedIndex].text!=="—— 市 ——"){
+        oAddress1.value=oMyselect1.options[oMyselect1.selectedIndex].text; 
+      }
+      if(oMyselect2.options[oMyselect2.selectedIndex].text!=="—— 市 ——"&&oMyselect3.options[oMyselect3.selectedIndex].text=="—— 区 ——")
+      {
+        oAddress1.value=oMyselect1.options[oMyselect1.selectedIndex].text+oMyselect2.options[oMyselect2.selectedIndex].text;
+      }     
+      if(oMyselect3.options[oMyselect3.selectedIndex].text!=="—— 区 ——"&&oMyselect2.options[oMyselect2.selectedIndex].text!=="—— 市 ——")
+      {
+        oAddress1.value=oMyselect1.options[oMyselect1.selectedIndex].text+oMyselect2.options[oMyselect2.selectedIndex].text+oMyselect3.options[oMyselect3.selectedIndex].text;
+      }
+    }   
+>>>>>>> e306d369dd98cc45e0c9fa6f8a90224c8a1053e5
 }
 
 function checkUserName()
@@ -145,5 +200,12 @@ function checkUserName()
         } 
     }
 
+<<<<<<< HEAD
 
 //登录注册结束
+=======
+    
+
+
+//登录注册、选择地址结束
+>>>>>>> e306d369dd98cc45e0c9fa6f8a90224c8a1053e5
