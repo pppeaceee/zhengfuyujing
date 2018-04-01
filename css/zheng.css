@@ -124,7 +124,7 @@ header .col-md-8{
 
 /* 首页样式结束 */
 
-
+/* 咨询部分样式开始 */
 .news a:focus, a:hover{
     text-decoration: none;
 }
@@ -135,9 +135,6 @@ header .col-md-8{
 
 .news span{
     float: right;
-}
-#myCarousel{
-    margin: 40px 0 0 0;
 }
 #navbar-collapse ul{
    margin-top:0;
@@ -157,8 +154,23 @@ header .col-md-8{
 }
 
 .news .panel-body{
-    padding-bottom: 0px;
+    font-size: 17px;
 }
+
+.news .panel-default{
+    margin: 8px 0;
+}
+
+.news .panel-group .panel-heading {
+    padding: 15px 20px;
+}
+
+.news nav .pagination{
+    margin-top: 13px;
+    margin-bottom: 30px;
+}
+/* 咨询部分样式结束*/
+
 
 
 /* 认识预警部分样式开始 */
