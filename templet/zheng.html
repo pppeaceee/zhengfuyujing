@@ -256,6 +256,7 @@
                               <li><a href="#">5</a></li>
                               <li><a href="#">6</a></li>
                               <li><a href="#">7</a></li>
+                              <li><a href="#">...</a></li>
                               <li>
                                 <a href="#" aria-label="Next">
                                   <span aria-hidden="true">&raquo;</span>
@@ -719,6 +720,89 @@
       <!-- 登录注册 -->
           
       <div>
+<<<<<<< HEAD
+        <div class="modal fade" id="login1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <button class="close" data-dismiss="modal">
+                            <span>&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-title">
+                        <h1 class="text-center">注册</h1>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-group" action="">
+                            <div class="form-group">
+                                <label for="">用户名</label>
+                                <input class="form-control" id="username" type="text" placeholder="6-12位字母或数字" onBlur="checkUserName()" oninput="checkUserName()" />
+                                <span id="test1"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="">密码</label>
+                                <input class="form-control" id="password" type="password" placeholder="6-15位字母或数字" onBlur="checkPassword()" oninput="checkPassword()">
+                                <span id="test2"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="">再次输入密码</label>
+                                <input class="form-control" id="confirmpassword" type="password" placeholder="请再输入一遍密码" onBlur="ConfirmPassword()" oninput="ConfirmPassword()">
+                                <span id="test3"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="">手机号</label>
+                                <input class="form-control" id="phonenumber" type="number" placeholder="请输入您的手机号" onBlur="checkPhone()" oninput="checkPhone()">
+                                <span id="test4"></span> 
+                            </div>
+                            <div class="text-right">
+                                <button class="btn btn-primary" type="submit">提交</button>
+                                <button class="btn btn-danger" data-dismiss="modal">取消</button>
+                            </div>
+                            <a href="" data-toggle="modal" data-dismiss="modal" data-target="#login">已有账号？点我登录</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="login" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <button class="close" data-dismiss="modal">
+                            <span>&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-title">
+                        <h1 class="text-center">登录</h1>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-group" action="">
+                            <div class="form-group">
+                                <label for="">用户名</label>
+                                <input class="form-control" type="text" placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <label for="">密码</label>
+                                <input class="form-control" type="password" placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <label for="">验证码</label>
+                                <input class="form-control" placeholder="">
+                            </div>
+                            <div class="text-right">
+                                <button class="btn btn-primary" type="submit">登录</button>
+                                <button class="btn btn-danger" data-dismiss="modal">取消</button>
+                            </div>
+                            <a href="" data-toggle="modal" data-dismiss="modal" data-target="#login1">还没有账号？点我注册</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+        
+=======
             <div class="modal fade" id="login1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -869,6 +953,7 @@
                 </div>
             </div>
           </div>
+>>>>>>> e306d369dd98cc45e0c9fa6f8a90224c8a1053e5
       
       <footer></footer>
  

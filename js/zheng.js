@@ -63,6 +63,24 @@ new WOW().init();
 //下拉效果插件结束
 
 //轮播效果开始
+<<<<<<< HEAD
+$('.carousel-control').css('line-height', $('.carousel-inner img').height() + 'px');
+$('#myCarousel').carousel({
+    interval: 3000,
+})
+$(window).resize(function () {
+    var $height = $('.carousel-inner img').eq(0).height() ||
+        $('.carousel-inner img').eq(1).height() ||
+        $('.carousel-inner img').eq(2).height();
+    $('.carousel-control').css('line-height', $height + 'px');
+})
+//轮播效果结束
+
+//登录注册开始
+window.onload=function(){
+    var oUserName=document.getElementById('username');
+
+=======
 
 //轮播效果结束
 
@@ -115,6 +133,7 @@ window.onload=function(){
         oAddress1.value=oMyselect1.options[oMyselect1.selectedIndex].text+oMyselect2.options[oMyselect2.selectedIndex].text+oMyselect3.options[oMyselect3.selectedIndex].text;
       }
     }   
+>>>>>>> e306d369dd98cc45e0c9fa6f8a90224c8a1053e5
 }
 
 function checkUserName()
@@ -181,7 +200,12 @@ function checkUserName()
         } 
     }
 
+<<<<<<< HEAD
+
+//登录注册结束
+=======
     
 
 
 //登录注册、选择地址结束
+>>>>>>> e306d369dd98cc45e0c9fa6f8a90224c8a1053e5
