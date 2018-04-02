@@ -24,5 +24,14 @@
 
 			}
 		}
+		public function page(){
+			if(isset($_GET)){
+				$pageModel = M("page");
+				$data = $pageModel->page();
+			}else{
+
+			}
+			// print_r($data);
+		}
 	}
 ?>
