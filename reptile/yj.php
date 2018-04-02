@@ -5,8 +5,7 @@
 			connect_db($this->db);
 		}
 		public function islink(){
-			//2018-4-2 从700开始爬
-			for($i=700;$i<=23819;$i++){
+			for($i=1;$i<=23819;$i++){
 				$url = sprintf($this->url,$i);
 				$this->get_link($url);
 			}

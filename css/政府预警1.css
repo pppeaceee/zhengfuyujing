@@ -136,29 +136,6 @@ header .col-md-8{
 .news span{
     float: right;
 }
-#myCarousel{
-    margin: 40px 0 0 0;
-}
-#navbar-collapse ul{
-   margin-top:0;
-}
-.carousel-inner img{
-   margin:0 auto;
-   
-}
-.carousel-control{
-    font-size: 70px;
-}
-
-.news nav{
-    margin-top: -10px;
-    padding-top: -10px;
-    text-align: center;
-}
-
-.news .panel-body{
-    padding-bottom: 0px;
-}
 
 
 /* 认识预警部分样式开始 */
