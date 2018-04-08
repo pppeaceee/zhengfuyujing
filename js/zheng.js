@@ -400,7 +400,86 @@ function checkUserName()
         } 
     }
 
-    
+    function checkPhone3()
+    {
+        var oPhoneNumber =document .getElementById('phonenumber4');
+        var oTest4=document.getElementById('find2');
+        var pattern = /^1[34578]\d{9}$/; //验证手机号正则表达式 
+        if(!pattern.test(oPhoneNumber.value)){ 
+            oTest4.innerHTML="手机号码不合规范"
+            oTest4.className="red";  
+           return false; 
+           } 
+          else{ 
+            oTest4.innerHTML="OK"
+            oTest4.className="green";  
+            return true; 
+        } 
+    }
+
+    function checkUserName3()
+    {
+         var oUserName = document.getElementById('username4'); 
+         var oTest1 = document.getElementById('find1'); 
+         var pattern = /^[a-zA-Z0-9_]{4,15}$/;  //用户名格式正则表达式
+         if(oUserName.value.length == 0){ 
+            oTest1.innerHTML="用户名不能为空";
+            oTest1.className="red";
+            
+            return false; 
+        } 
+        if(!pattern.test(oUserName.value)){ 
+            oTest1.innerHTML="用户名不合规范";     
+            oTest1.className="red";  
+            return false; 
+        } 
+        else{ 
+            oTest1.innerHTML="OK";
+            oTest1.className="green";
+            return true; 
+        } 
+    }
+
+    function checkPassword3()
+    {
+        var oPassword = document.getElementById('password4'); 
+         var oTest2 = document.getElementById('find3'); 
+         var pattern = /^[a-zA-Z0-9_]{5,14}$/; 
+         if(!pattern.test(oPassword.value)){ 
+            oTest2.innerHTML="密码不合规范";
+            oTest2.className="red";  
+           return false; 
+           } 
+          else{ 
+            oTest2.innerHTML="OK";
+            oTest2.className="green";  
+            return true; 
+         } 
+    }
+
+    function ConfirmPassword3()
+    {
+         var oConfirmPassword = document.getElementById('confirmpassword4'); 
+         var oPassword = document.getElementById('password4'); 
+         var oTest3 = document.getElementById('find4'); 
+         if((oConfirmPassword.value)!=(oPassword.value) || oConfirmPassword.value.length == 0){ 
+            oTest3.innerHTML="上下密码不一致"
+            oTest3.className="red";  
+           return false; 
+           } 
+          else{ 
+            oTest3.innerHTML="OK"
+            oTest3.className="green";  
+            return true; 
+          }  
+    }
+
+    $('#verify').click(function(){
+        alert("验证成功，请输入新的密码");
+        $('#success1').removeClass('hidden1');
+        $('#verify').addClass('hidden1');
+        $('#verify1').removeClass('hidden1');
+    })
 
 
 //登录注册、选择地址结束

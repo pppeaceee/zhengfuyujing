@@ -55,6 +55,7 @@ header .col-md-8{
     background-color: transparent;
     border: none;
 }
+
 .navbar-default .navbar-nav>li>a{
     color: #fff;
     font-size: 21px;
@@ -67,8 +68,17 @@ header .col-md-8{
     background-color: transparent;
     color: white;
 }
-.navbar-default .navbar-nav>li.active>a:hover{
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover{
     background-color: transparent;
+}
+
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover{
+    color:#B8B8B8;
+}
+
+.navbar-default .navbar-nav>li>a:focus,{
+    border: none;
+    color: red;
 }
 
 .fixed-header-on header{
@@ -361,7 +371,7 @@ header .col-md-8{
 
 .mymessage10{
     line-height:30px;
-    border-bottom:1px solid #D7D7D7;
-    padding-bottom:15px;
+    border-bottom:1px solid #D7D7D7;padding-bottom:15px;
 }
 /* 个人中心样式结束 */
+
