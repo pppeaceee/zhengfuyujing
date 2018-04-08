@@ -1,11 +1,14 @@
 <?php
+	// require_once "phpQuery/phpQuery.php";
+	// require_once "db_fns.php";
 	class GetHTML_yj{
 		function __construct($url){
 			$this->url = $url;
 			connect_db($this->db);
 		}
 		public function islink(){
-			for($i=1;$i<=23819;$i++){
+			//数据库查询一下记录
+			for($i=1;$i<=40;$i++){
 				$url = sprintf($this->url,$i);
 				$this->get_link($url);
 			}
@@ -49,6 +52,9 @@
 		    $num = $this->color_level($level);
 		    $level = $level."色";
 		    $image = "http://www.tianqi.com/static/img/yujing_img/big".$py."_ico".$num.".jpg";
+		    if($py == "false"){
+		    	$image = "http://www.weather.com.cn/m2/i/about/alarmpic/1201.gif";
+		    }
 
 		    $result = mysqli_query($this->db,"SELECT * FROM yj WHERE title='{$title}' and level='{$level}' and area='{$area}' and type='{$type}' and data_time='{$time}' and zhuantai='{$zhuantai}' ORDER BY id DESC");
 			$row=mysqli_fetch_assoc($result);
@@ -87,7 +93,7 @@
 		}
 		public function pinyin($ch){
 			switch($ch){
-				case "台风":return "taifeng";
+				case "台风":return "tiafeng";
 				case "暴雨":return "baoyu";
 				case "暴雪":return "baoxue";
 				case "寒潮":return "hanchao";
@@ -104,5 +110,7 @@
 			}
 		}
 	}
+	// $html = new GetHTML_yj("https://www.tianqi.com/alarmnews/%d");
+	// $html->islink();
 	// $html->get_info("http://www.tianqi.com/alarmnews/1803152145102641.html");
 ?>

@@ -1,15 +1,22 @@
 <?php
 	class registerModel{
 		public function register(){
-			// print_r($_POST);
-			if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['province']) && isset($_POST['city']) && isset($_POST['county'])){
+			if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['province']) && isset($_POST['county'])){
 				if($this->check($_POST['username'])){
+					$pass = $_POST['password'];
+					$_POST['password'] = md5($_POST['password']);
 					DB::insert('user',$_POST);
-					echo "注册成功";
+					$_SESSION['username']=$_POST['username'];
+					$_SESSION['password']=$pass;
+					echo "true";
 					//自动登录
+					// session_start();
 				}else{
+					echo "false";
 					//用户已存在
 				}
+			}else{
+				echo "error";
 			}
 		}
 		public function check($user){

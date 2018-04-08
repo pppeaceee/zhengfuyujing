@@ -22,7 +22,7 @@
 			while($rs = mysqli_fetch_array($query,MYSQLI_ASSOC)){
 				$list[] = $rs;
 			}
-			return isset($list)?$list:"";
+			return isset($list)?$list:[];
 		}
 		function findOne($query){
 			$rs = mysqli_fetch_array($query,MYSQLI_ASSOC);
@@ -51,7 +51,7 @@
 				$keyAndvalueArr[] = "`".$key."`='".$value."'";
 			}
 			$keyAndvalues = implode(",",$keyAndvalueArr);
-			$sql = "update ".$table."set ".$keyAndvalues." where ".$where;
+			$sql = "update ".$table." set ".$keyAndvalues." where ".$where;
 			$this->query($sql);
 		}
 		function del($table,$where){

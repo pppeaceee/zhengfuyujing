@@ -3,13 +3,18 @@
 		public function login(){
 			if(isset($_POST['username']) && isset($_POST['password'])){
 				if($pass = $this->check($_POST['username'])){
-					if($pass == $_POST['password']){
-						echo "密码正确";
+					if($pass == md5($_POST['password'])){
+						echo "true";
 						//自动登录
+						// session_start();
+						$_SESSION['username']=$_POST['username'];
+						$_SESSION['password']=$_POST['password'];
+						// echo "<script>window.location.href='http://localhost';</script>";
 					}else{
-						echo "密码错误";
+						echo "false";
 					}
 				}else{
+					echo "error";
 					//用户不存在
 				}
 			}

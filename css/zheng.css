@@ -7,7 +7,7 @@ body{
     font-size: 15px;
     line-height: 1.5;
     color: #333;
-    background-color: #fff;
+    background-color:#fff;
     position: relative;
 }
 
@@ -16,8 +16,8 @@ a:hover{
 }
 
 section{
-    background-color: #fff;
-    padding-top: 80px;
+    background-color:#fff;
+    /* padding-top: 80px; */
 }
 
 img{
@@ -31,23 +31,23 @@ img{
 header{
     color: #fff;
     background-color: rgba(0, 0, 0, 0.5);
-    padding: 10px 0;
+   
     transition: all 1s ease-in-out;
 }
 .logo{
     float: left;
-    margin: 10px 10px 10px 0;
+    margin: 14px 0px 10px 0;
+    width: 88px;
 }
 .site-name{
    font-size: 36px;
    transition: all 1s ease-in-out;
+   margin-top: 10%;
 }
 .site-name a{
     color: white;
 }
-.site-slogan{
-   font-size: 14px;
-}
+
 header .col-md-8{
     margin-top: 19px;
 }
@@ -57,7 +57,7 @@ header .col-md-8{
 }
 .navbar-default .navbar-nav>li>a{
     color: #fff;
-    font-size: 22px;
+    font-size: 21px;
     transition: all 1s ease-in-out;
 }
 .navbar-default .navbar-nav>li>a:hover{
@@ -72,16 +72,28 @@ header .col-md-8{
 }
 
 .fixed-header-on header{
-    height: 70px;
+    height: 80px;
+    padding: 10px 0;
     background-color: rgba(0, 0, 0, 0.9)
 }
 
 .fixed-header-on .navbar-default .navbar-nav>li>a{
-    font-size: 20px;
+    font-size: 19px;
+    
 }
+
+@media screen and (max-width: 768px) {
+    .fixed-header-on .navbar-default .navbar-nav>li>a {
+        background-color: rgba(0, 0, 0, 0.9)
+    }
+}
+
+
+
 
 .fixed-header-on .col-md-8{
     margin-top: 4px;
+    
 }
 
 .fixed-header-on .logo{
@@ -92,6 +104,7 @@ header .col-md-8{
 .fixed-header-on .site-name{
     font-size: 24px;
 }
+
 /* 头部样式结束 */
 /* 首页样式开始 */
 .index{
@@ -122,18 +135,38 @@ header .col-md-8{
     width: 100%;
 }
 
+@media screen and (max-width: 768px) {
+    .index h3,.index p{
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .index h1{
+        font-size: 30px;
+    }
+}
+
+
+
 /* 首页样式结束 */
 
-/* 咨询部分样式开始 */
-.news a:focus, a:hover{
+/* 资讯部分样式开始 */
+
+#section-2 .page-input-box{
+    display: none;
+}
+
+
+#section-2 a:focus, a:hover{
     text-decoration: none;
 }
 
-.news img{
+#section-2 img{
     float: left;
 }
 
-.news span{
+#section-2 span{
     float: right;
 }
 #navbar-collapse ul{
@@ -147,29 +180,29 @@ header .col-md-8{
     font-size: 70px;
 }
 
-.news nav{
+#section-2 nav{
     margin-top: -10px;
     padding-top: -10px;
     text-align: center;
 }
 
-.news .panel-body{
+#section-2 .panel-body{
     font-size: 17px;
 }
 
-.news .panel-default{
+#section-2 .panel-default{
     margin: 8px 0;
 }
 
-.news .panel-group .panel-heading {
+#section-2 .panel-group .panel-heading {
     padding: 15px 20px;
 }
 
-.news nav .pagination{
+#section-2 nav .pagination{
     margin-top: 13px;
     margin-bottom: 30px;
 }
-/* 咨询部分样式结束*/
+/* 资讯部分样式结束*/
 
 
 
@@ -215,4 +248,120 @@ header .col-md-8{
 .btn{
     margin-bottom: 20px;
 }
+
+.introduce{
+    line-height: 30px;
+}
+
+
+.both .btn{
+    margin: 10px;;
+}
+
+
+.btn-yellow{
+    background-color:#FEF070 ;
+    color: white;
+}
+
+.btn-yellow:hover{
+    background-color: #FFE701;
+    color: white;
+}
+
+.isotope-container h4{
+    line-height: 30px;
+}
 /* 认识预警部分样式结束 */
+
+
+/* 关于我们样式开始 */
+#section-4{
+    background-color:#F7F7F7;
+}
+
+#section-4 .about{
+    color:#626262;
+    font-size:18px;
+    border-top:1px solid #CFCFCF;
+    line-height:30px; 
+    padding-top:12px;
+}
+
+#section-4 .message{
+    color:#626262;
+    font-size:18px;
+    line-height:30px;
+}
+
+#section-4 .message strong{
+    color:#333333;
+}
+
+#section-4 h3{
+    margin: 20px 0;
+}
+
+#section-4 .col-md-5 {
+    margin:10px 0;
+}
+
+#section-4 .col-md-5 input{
+    margin:10px 0px;
+}
+
+#section-4 .col-md-5 textarea{
+    display: block;
+    width: 100%;
+    height:120px;
+    padding: 6px 12px;
+    font-size: 14px;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    margin:10px 0px;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+#section-4 .col-md-5 btn{
+    width:100%;font-size:16px;
+}
+
+
+
+/* 关于我们样式结束 */
+
+/* 登录注册样式开始 */
+#close{
+    vertical-align: baseline;
+}
+
+.red{
+    color: #FF4F4F;
+    
+}
+
+.green{
+    color: green;
+}
+
+/* 登录注册样式结束 */
+
+/* 个人中心样式开始 */
+.show1{
+    display: block;
+}
+.hidden1{
+    display: none;
+}
+
+.mymessage10{
+    line-height:30px;
+    border-bottom:1px solid #D7D7D7;
+    padding-bottom:15px;
+}
+/* 个人中心样式结束 */

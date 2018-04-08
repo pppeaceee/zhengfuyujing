@@ -17,7 +17,7 @@
         			$time_now=$this->getMillisecond();
         			$url_new="http://product.weather.com.cn/alarm/webdata/".$value."?_="."{$time_now}";
         			$context1=file_get_contents($url_new);
-        			if($i < 5 && strpos($context1,"ALERTID") == false){echo "错误".$i++;continue;}
+        			if($i < 20 && strpos($context1,"ALERTID") == false){echo "错误".$i++;continue;}
 
         			$h=explode("ALERTID",$context1);
 			        preg_match_all("/[\x80-\xff]+/", $h[0],$title);
