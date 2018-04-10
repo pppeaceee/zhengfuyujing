@@ -6,6 +6,7 @@
 			$data[0]['page_view'] = count(DB::findAll($sql));
 			$data[0]['view_time'] = date('Y-m-d');
 			// var_dump($data[0]['page_view']);
+			$data[0]['adminuser'] = $_SESSION['username'];
 			$sql = "SELECT id from user where create_time > '{$time}'";
 			$data[0]['new_user'] = count(DB::findAll($sql));
 			$sql = "SELECT id from user where root=1 and root_time > '{$time}'";
@@ -82,6 +83,7 @@
 		public function usercommand(){
 			$sql = "SELECT * from user where root = 0 and statue = 1 ORDER BY create_time DESC";
 			$result = DB::findAll($sql);
+			$data[0]['adminuser'] = $_SESSION['username'];
 			$data[0]['userdata'] = "";
 			foreach($result as $value){
 				$data[0]['userdata'] .= "<tr>
@@ -133,9 +135,18 @@
 			echo $data;
 		}
 		public function commander(){
-			$sql = "SELECT * from user where statue = 1 and root = 1 ORDER BY root_time DESC";
+			$sql = "SELECT * from user where statue = 1 and root = 1 and username = '{$_SESSION['username']}'";
+			$result = DB::findOne($sql);
+			$data[0]['adminuser'] = $_SESSION['username'];
+			$data[0]['admin'] = "<tr>
+					                <td>{$result['username']}</td>
+					                <td>{$result['province']}{$result['city']}{$result['county']}</td>
+					                <td>{$result['phonenumber']}</td>
+					                <td>{$result['root_time']}</td>
+					                <td><a href='#' onclick='deladmin();'>辞职</a></td>
+								</tr>";
+			$sql = "SELECT * from user where statue = 1 and root = 1 and username != '{$_SESSION['username']}' ORDER BY root_time DESC";
 			$result = DB::findAll($sql);
-			$data[0]['admin'] = "";
 			foreach($result as $value){
 				$data[0]['admin'] .= "<tr>
 					                <td>{$value['username']}</td>
@@ -151,6 +162,7 @@
 		public function note(){
 			$sql = "SELECT * from message where statue = 1 ORDER BY create_time DESC";
 			$result = DB::findAll($sql);
+			$data[0]['adminuser'] = $_SESSION['username'];
 			$data[0]['note'] = "";
 			foreach($result as $value){
 				$data[0]['note'] .= "<tr>
@@ -174,6 +186,16 @@
 			unset($_SESSION['username']);
 			unset($_SESSION['password']);
 			echo "<script>window.location.href='http://localhost';</script>";
+		}
+		public function deladmin(){
+			$sql = "SELECT * from user where root=1 and statue=1";
+			if(count(DB::findAll($sql)) > 1){
+				$arr['root'] = 0;
+				DB::update('user',$arr,"username='{$_SESSION['username']}'");
+				echo "true";
+			}else{
+				echo "false";
+			}
 		}
 	}
 ?>

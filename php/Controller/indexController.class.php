@@ -64,5 +64,11 @@
 				$userModel->update_user();
 			}
 		}
+		public function findpass(){
+			if(isset($_POST)){
+				$userModel = M('index');
+				$userModel->update_pass();
+			}
+		}
 	}
 ?>

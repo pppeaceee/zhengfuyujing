@@ -216,7 +216,7 @@
           $('#address3 h4').text(address_data);
           $('#chooseadd1').addClass('hidden1');
           $('#password3').html('<h4>'+pass_data+'</h4>');
-          $('#button_data').html('<a href="admin.php?controller=admin&method=logout"><button class="btn btn-lg" style="float:left;">退出</button></a><button class="btn btn-primary btn-lg" type="submit" id="change" onclick="update_user();">修改</button> <button class="btn btn-danger btn-lg" data-dismiss="modal">取消</button>');
+          $('#button_data').html('<a href="admin.php?controller=admin&method=logout"><button class="btn btn-lg" style="float:left;">退出登录</button></a><button class="btn btn-primary btn-lg" type="submit" id="change" onclick="update_user();">修改</button> <button class="btn btn-danger btn-lg" data-dismiss="modal">取消</button>');
         }
         function send_update_user(){
           var phone = phonenumber11.value;
@@ -246,7 +246,7 @@
               $('#address3 h4').text(data['province']+data['city']+data['county']);
               $('#chooseadd1').addClass('hidden1');
               $('#password3').html('<h4>'+pass_data+'</h4>');
-              $('#button_data').html('<a href="admin.php?controller=admin&method=logout"><button class="btn btn-lg" style="float:left;">退出</button></a><button class="btn btn-primary btn-lg" type="submit" id="change" onclick="update_user();">修改</button> <button class="btn btn-danger btn-lg" data-dismiss="modal">取消</button>');
+              $('#button_data').html('<a href="admin.php?controller=admin&method=logout"><button class="btn btn-lg" style="float:left;">退出登录</button></a><button class="btn btn-primary btn-lg" type="submit" id="change" onclick="update_user();">修改</button> <button class="btn btn-danger btn-lg" data-dismiss="modal">取消</button>');
             }
           });
         }

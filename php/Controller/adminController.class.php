@@ -47,5 +47,8 @@
 		public function logout(){
 			$this->adminModel->logout();
 		}
+		public function deladmin(){
+			$this->adminModel->deladmin();
+		}
 	}
 ?>

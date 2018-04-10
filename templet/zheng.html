@@ -2494,7 +2494,7 @@
                                         </div>
                                 </div>
                                 <div class="text-right" id="button_data" style="margin:15px 0 0 0;">
-                                        <a href="admin.php?controller=admin&method=logout"><button class="btn btn-lg" style="float:left;">退出</button></a>
+                                        <a href="admin.php?controller=admin&method=logout"><button class="btn btn-lg" style="float:left;">退出登录</button></a>
                                         <button class="btn btn-primary btn-lg" type="submit" id="change" onclick="update_user();">修改</button>
                                         <button class="btn btn-danger btn-lg" data-dismiss="modal">取消</button>
                                 </div>
@@ -2527,7 +2527,7 @@
                                 <span id="find2"></span>
                             </div>
 
-                            <div id="success1" class="hidden1">
+                            <div id="success1">
                                     <div class="form-group">
                                         <label for="">验证成功，请输入新的密码：</label>
                                         <input class="form-control" id="password4" type="password" placeholder="请输入新的密码" onBlur="checkPassword3()" oninput="checkPassword3()">
@@ -2545,7 +2545,6 @@
         
             <div class="text-right">
                 <button class="btn btn-primary" type="submit" id="verify">验证</button>
-                <button class="btn btn-primary hidden1" type="submit" id="verify1" >登录</button>
                 <button class="btn btn-danger" data-dismiss="modal">取消</button>
             </div>
         </div>
