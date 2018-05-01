@@ -493,7 +493,7 @@ function checkUserName()
         success:function(data){
           if(data == "true"){
             alert("密码修改成功");
-            window.location.href='http://localhost';
+            window.location.href='http://112.74.35.246';
           }else if(data == "false"){
             alert("请核实用户名和手机信息");
           }else{
@@ -514,3 +514,11 @@ $('#tip3').popover();
 $('#tip4').popover();
 
 $('#tip5').popover();
+
+            document.getElementById('canvas').width = document.body.offsetWidth;
+            document.getElementById('canvas').height = document.body.scrollHeight-2000;
+
+$(window).resize=function(){
+              document.getElementById('canvas').width = document.body.offsetWidth;
+            document.getElementById('canvas').height = document.body.scrollHeight-2000;
+}

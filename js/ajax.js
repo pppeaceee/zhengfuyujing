@@ -110,7 +110,7 @@
                 type:'post',
                 success:function(data){
                     // console.log(data);
-                    if(data == "true")window.location.href='http://localhost';
+                    if(data == "true")window.location.href='http://112.74.35.246';
                     else if(data == "false")alert("密码错误");
                     else alert("用户不存在");
                 }
@@ -147,7 +147,7 @@
                 async:true,
                 success:function(data){
                     // console.log(data);
-                    if(data == "true")window.location.href='http://localhost';
+                    if(data == "true")window.location.href='http://112.74.35.246';
                     else if(data == "false")alert("用户已存在");
                     else console.log(data);
                 }

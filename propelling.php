@@ -1,7 +1,7 @@
 <?php
 	class propelModel{
 		public function __construct(){
-			$this->db = mysqli_connect("localhost:3306","root","","tqyj");
+			$this->db = mysqli_connect("112.74.35.246:3306","root","176409","tqyj");
 			mysqli_query($this->db,"set names 'utf8'");
 		}
 		public function start(){
@@ -11,7 +11,7 @@
 			}
 		}
 		public function user_propel(){
-			$sql = "SELECT * from `user` where root = 0";
+			$sql = "SELECT * from `user` where statue = 1";
 			$result = mysqli_query($this->db,$sql);
 			while($data = mysqli_fetch_array($result,MYSQLI_ASSOC)){
 				if($data['city'] == "市辖区" || $data['city'] == "郊县")$data['city'] = "";

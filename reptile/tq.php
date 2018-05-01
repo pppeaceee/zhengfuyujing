@@ -4,6 +4,7 @@
 	class GetHTML_tq{
 		function  __construct($url){
 			$this->url = $url;
+			$this->db = 0;
 			connect_db($this->db);
 		}
 		public function islink(){

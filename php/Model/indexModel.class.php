@@ -82,6 +82,14 @@
 			foreach ($result as $value) {
 				$data[] = $value;
 			}
+
+			$sql = "select * from yj where zhuantai = '发布' and state = 1 ORDER BY data_time DESC LIMIT 0,{$sum}";
+			$result = DB::findAll($sql);
+			$sum -= count($result);
+			foreach ($result as $value) {
+				$data[] = $value;
+			}
+
 			return $data;
 			// echo isset($data[0])."\n";
 		}

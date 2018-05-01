@@ -4,11 +4,12 @@
 			if(isset($_POST['username']) && isset($_POST['password'])){
 				if($pass = $this->check($_POST['username'])){
 					if($pass == md5($_POST['password'])){
+						$_SESSION['username']=$_POST['username'];
+						$_SESSION['password']=$_POST['password'];
 						echo "true";
 						//自动登录
 						// session_start();
-						$_SESSION['username']=$_POST['username'];
-						$_SESSION['password']=$_POST['password'];
+						
 						// echo "<script>window.location.href='http://localhost';</script>";
 					}else{
 						echo "false";

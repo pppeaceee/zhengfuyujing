@@ -31,7 +31,7 @@
 			return $data;
 		}
 		public function index(){
-			echo "<script>window.location.href='http://localhost';</script>";
+			echo "<script>window.location.href='http://112.74.35.246';</script>";
 		}
 		public function login(){
 			if(isset($_SESSION['username']) && isset($_SESSION['password'])){
@@ -185,7 +185,7 @@
 		public function logout(){
 			unset($_SESSION['username']);
 			unset($_SESSION['password']);
-			echo "<script>window.location.href='http://localhost';</script>";
+			echo "<script>window.location.href='http://112.74.35.246';</script>";
 		}
 		public function deladmin(){
 			$sql = "SELECT * from user where root=1 and statue=1";
