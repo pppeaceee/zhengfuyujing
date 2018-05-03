@@ -194,15 +194,5 @@
 			$data = json_encode($result);
 			echo $data;
 		}
-		public function update_pass(){
-			$sql = "SELECT * from user where username='{$_POST['user']}' and phonenumber='{$_POST['phone']}'";
-			if(count(DB::findOne($sql)) != 0){
-				$arr['password'] = md5($_POST['pass']);
-				DB::update('user',$arr,"username='{$_POST['user']}' and phonenumber='{$_POST['phone']}'");
-				echo "true";
-			}else{
-				echo "false";
-			}
-		}
 	}
 ?>

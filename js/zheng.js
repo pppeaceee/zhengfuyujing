@@ -256,7 +256,7 @@ function update_user(){
     address_data = $('#address3 h4').text();
     pass_data = $('#password3 > h4').text();
 
-    $('#button_data').html('<a href="admin.php?controller=admin&method=logout"><button class="btn btn-lg" style="float:left;">退出登录</button></a><button class="btn btn-primary btn-lg" onclick="send_update_user();" type="submit" id="change">保存</button> <button class="btn btn-danger btn-lg" onclick="cencel();">取消</button>');
+    $('#button_data').html('<a href="admin.php?controller=admin&method=logout"><button class="btn btn-lg" style="float:left;">退出</button></a><button class="btn btn-primary btn-lg" onclick="send_update_user();" type="submit" id="change">保存</button> <button class="btn btn-danger btn-lg" onclick="cencel();">取消</button>');
     $('#phonenumber3').html('<div class="form-group">'+
     '<input class="form-control" id="phonenumber11" type="number" name="phonenumber" placeholder="不填即为放弃修改" onBlur="checkPhone1()" oninput="checkPhone1()">'+
     '<span id="test11"></span> '+
@@ -475,6 +475,7 @@ function checkUserName()
     }
 
     $('#verify').click(function(){
+<<<<<<< HEAD
       var user = username4.value;
       var phone = phonenumber4.value;
       var pass = password4.value;
@@ -501,7 +502,14 @@ function checkUserName()
           }
         }
       });
+=======
+        alert("验证成功，请输入新的密码");
+        $('#success1').removeClass('hidden1');
+        $('#verify').addClass('hidden1');
+        $('#verify1').removeClass('hidden1');
+>>>>>>> parent of dd6048c... 1.6.4
     })
+
 
 //登录注册、选择地址结束
 
